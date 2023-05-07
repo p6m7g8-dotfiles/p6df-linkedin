@@ -11,7 +11,7 @@ N/A
 
 import docopt
 import sys
-import P6LIBot
+from P6LIBot.P6LIBot import P6LIBot
 
 
 def process(args) -> int:

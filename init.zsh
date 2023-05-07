@@ -24,17 +24,3 @@ p6df::modules::linkedin::init() {
   
   p6_python_path_if "$P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6df-linkedin/lib"
 }
-
-######################################################################
-#<
-#
-# Function: p6df::modules::linkedin::langs()
-#
-#>
-######################################################################
-p6df::modules::linkedin::langs() {
-
-  pip install selenium
-
-  p6_return_void
-}

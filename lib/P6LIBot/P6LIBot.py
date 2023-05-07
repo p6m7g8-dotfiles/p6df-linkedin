@@ -1,15 +1,15 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-import time
 from typing import Dict, List
+import time
 
 PROFILE_DIR = "/Users/pgollucci/Library/Application Support/Google/Chrome"
 CONNECTION_URL = "https://www.linkedin.com/mynetwork/invite-connect/connections/"
 SCROLL_PAUSE_TIME = 1
 
 
-class LIBot:
+class P6LIBot:
     """ """
 
     def __init__(self, start_url: str) -> None:
@@ -34,7 +34,7 @@ class LIBot:
 
     def login(self) -> None:
         """ """
-        time.sleep(1)
+        time.sleep(25)
 
     def peek_at_connections(self) -> None:
         """ """
@@ -45,17 +45,11 @@ class LIBot:
 
     def scroll_to_load_all_connections(self) -> None:
         """ """
-        last_height = self.browser.execute_script("return document.body.scrollHeight")
+        js_script = "document.body.scrollHeight"
+        last_height = self.browser.execute_script(f"return {js_script}")
         while True:
-            self.browser.execute_script(
-                "window.scrollTo(0, document.body.scrollHeight);"
-            )
-
-            time.sleep(SCROLL_PAUSE_TIME)
-
-            new_height = self.browser.execute_script(
-                "return document.body.scrollHeight"
-            )
+            self.browser.execute_script(f"window.scrollTo(0, {js_script});")
+            new_height = self.browser.execute_script(f"return {js_script}")
             if new_height == last_height:
                 break
             last_height = new_height
@@ -88,7 +82,9 @@ class LIBot:
         """ """
         for connection in connections:
             profile_url = connection["profile_url"]
+            print(f"{profile_url}")
             self.browser.get(profile_url)
+            time.sleep(1)
 
     def load_profile_urls_from_file(self, file_path: str) -> List[str]:
         """ """
