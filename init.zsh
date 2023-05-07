@@ -2,7 +2,7 @@
 ######################################################################
 #<
 #
-# Function: p6df::modules::vim::deps()
+# Function: p6df::modules::linkedin::deps()
 #
 #>
 ######################################################################
@@ -12,11 +12,26 @@ p6df::modules::linkedin::deps() {
   )
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::linkedin::init()
+#
+#  Environment:	 P6_DFZ_SRC_P6M7G8_DOTFILES_DIR
+#>
+######################################################################
 p6df::modules::linkedin::init() {
   
   p6_python_path_if "$P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6df-linkedin/lib"
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::linkedin::langs()
+#
+#>
+######################################################################
 p6df::modules::linkedin::langs() {
 
   pip install selenium
