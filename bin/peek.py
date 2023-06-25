@@ -16,10 +16,11 @@ from P6LIBot.P6LIBot import P6LIBot
 
 def process(args) -> int:
     """ """
+
     with P6LIBot(args["--start-url"]) as li:
         li.login()
         # li.peek_at_connections()
-        profile_urls = li.load_profile_urls_from_file("profile_urls.txt")
+        profile_urls = li.load_profile_urls_from_file("u1.txt")
         connections = [{"profile_url": url} for url in profile_urls]
         li.view_connections(connections)
 
