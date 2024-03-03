@@ -46,17 +46,18 @@
 
 - p6df::modules::linkedin::deps()
 - p6df::modules::linkedin::init()
-- p6df::modules::linkedin::langs()
 
 
 
 ## Hier
 ```text
 .
-└── P6
-    └── li_bot.py
+└── P6LIBot
+    ├── P6LIBot.py
+    ├── __init__.py
+    └── __version__.py
 
-1 directory, 1 file
+2 directories, 3 files
 ```
 ## Author
 
