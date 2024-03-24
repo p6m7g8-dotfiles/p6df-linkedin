@@ -15,12 +15,17 @@ p6df::modules::linkedin::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::linkedin::init()
+# Function: p6df::modules::linkedin::init(_module, dir)
 #
-#  Environment:	 P6_DFZ_SRC_P6M7G8_DOTFILES_DIR
+#  Args:
+#	_module -
+#	dir -
+#
 #>
 ######################################################################
 p6df::modules::linkedin::init() {
+  local _module="$1"
+  local dir="$2"
 
-  p6_python_path_if "$P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6df-linkedin/lib"
+  p6_python_path_if "$dir/lib"
 }
