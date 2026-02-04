@@ -37,6 +37,9 @@ TODO: Add a short summary of this module.
 
 - `p6df::modules::linkedin::deps()`
 - `p6df::modules::linkedin::init(_module, dir)`
+  - Args:
+    - _module - 
+    - dir - 
 
 ## Hierarchy
 
