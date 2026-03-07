@@ -29,3 +29,17 @@ p6df::modules::linkedin::init() {
 
   p6_python_path_if "$dir/lib"
 }
+
+######################################################################
+#<
+#
+# Function: p6df::modules::linkedin::mcp()
+#
+#>
+######################################################################
+p6df::modules::linkedin::mcp() {
+
+  p6_js_npm_global_install "linkedin-mcp-server"
+
+  p6_return_void
+}
