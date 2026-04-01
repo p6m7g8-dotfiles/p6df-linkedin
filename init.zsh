@@ -59,5 +59,5 @@ p6df::modules::linkedin::mcp() {
 ######################################################################
 p6df::modules::linkedin::profile::mod() {
 
-  p6_return_words 'linkedin' '$LINKEDIN_API_KEY'
+  p6_return_words 'linkedin' "$"
 }
