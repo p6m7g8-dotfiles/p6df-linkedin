@@ -15,60 +15,16 @@ p6df::modules::linkedin::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::linkedin::init(_module, dir)
+# Function: p6df::modules::linkedin::env::init()
 #
-#  Args:
-#	_module -
-#	dir -
-#
+#  Environment:	 P6_DFZ_SRC_P6M7G8_DOTFILES_DIR
 #>
 ######################################################################
-p6df::modules::linkedin::init() {
+p6df::modules::linkedin::env::init() {
+
   local _module="$1"
-  local dir="$2"
-
-  p6_python_path_if "$dir/lib"
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::linkedin::profile::on(profile, code)
-#
-#  Args:
-#	profile -
-#	code - shell code block (export LINKEDIN_ACCESS_TOKEN=... LINKEDIN_PERSON_URN=...)
-#
-#  Environment:	 LINKEDIN_ACCESS_TOKEN LINKEDIN_PERSON_URN P6_DFZ_PROFILE_LINKEDIN
-#>
-######################################################################
-p6df::modules::linkedin::profile::on() {
-  local profile="$1"
-  local code="$2"
-
-  p6_run_code "$code"
-
-  p6_env_export "P6_DFZ_PROFILE_LINKEDIN" "$profile"
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::linkedin::profile::off(code)
-#
-#  Args:
-#	code - shell code block previously passed to profile::on
-#
-#  Environment:	 LINKEDIN_ACCESS_TOKEN LINKEDIN_PERSON_URN P6_DFZ_PROFILE_LINKEDIN
-#>
-######################################################################
-p6df::modules::linkedin::profile::off() {
-  local code="$1"
-
-  p6_env_unset_from_code "$code"
-  p6_env_export_un P6_DFZ_PROFILE_LINKEDIN
+  local _dir="$2"
+  p6_python_path_if "$P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6df-linkedin/lib"
 
   p6_return_void
 }
@@ -88,4 +44,20 @@ p6df::modules::linkedin::mcp() {
   p6df::modules::openai::mcp::server::add "linkedin" "npx" "-y" "linkedin-mcp-server"
 
   p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: words linkedin $LINKEDIN_API_KEY = p6df::modules::linkedin::profile::mod()
+#
+#  Returns:
+#	words - linkedin $LINKEDIN_API_KEY
+#
+#  Environment:	 LINKEDIN_API_KEY
+#>
+######################################################################
+p6df::modules::linkedin::profile::mod() {
+
+  p6_return_words 'linkedin' "$"
 }
