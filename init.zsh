@@ -15,7 +15,11 @@ p6df::modules::linkedin::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::linkedin::env::init()
+# Function: p6df::modules::linkedin::env::init(_module, _dir)
+#
+#  Args:
+#	_module -
+#	_dir -
 #
 #  Environment:	 P6_DFZ_SRC_P6M7G8_DOTFILES_DIR
 #>
