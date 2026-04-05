@@ -17,9 +17,7 @@
 
 ## Summary
 
-p6df module for LinkedIn: Python bot library (`P6LIBot`), CLI helpers, and
-MCP server (`linkedin-mcp-server`) for AI-driven LinkedIn profile, feed,
-and messaging interactions.
+TODO: Add a short summary of this module.
 
 ## Contributing
 
@@ -38,10 +36,10 @@ and messaging interactions.
 ##### p6df-linkedin/init.zsh
 
 - `p6df::modules::linkedin::deps()`
-- `p6df::modules::linkedin::init(_module, dir)`
+- `p6df::modules::linkedin::env::init(_module, _dir)`
   - Args:
     - _module
-    - dir
+    - _dir
 - `p6df::modules::linkedin::mcp()`
 
 ## Hierarchy
